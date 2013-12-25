@@ -5,10 +5,9 @@ var filter = process.argv[3];
 
 
 fs.readdir(dir, function(err, list){
-  for(i=0;i<list.length;i++){
-    file = list[i];
+  list.forEach(function(file){
     if (path.extname(file) == '.'+filter){
       console.log(file)
     }
-  }
+  });
 });
